@@ -58,8 +58,8 @@ class User extends Authenticatable
         return $this->belongsTo(File::class, 'avatar');
     }
 
-    public function group(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function group(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsTo(Group::class, 'group_id');
+        return $this->belongsToMany(Group::class, UserGroup::class, 'user_id', 'group_id');
     }
 }

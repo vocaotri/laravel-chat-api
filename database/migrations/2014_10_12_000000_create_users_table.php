@@ -21,7 +21,6 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('avatar')->nullable()->index();
             $table->date('birthday');
             $table->boolean('gender');
-            $table->unsignedBigInteger('group_id')->index()->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
